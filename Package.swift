@@ -60,7 +60,10 @@ if let useLocalDepsEnv = Context.environment["SWIFTCI_USE_LOCAL_DEPS"], !useLoca
                 path: "\(root)/swift-foundation-icu"),
             .package(
                 name: "swift-syntax",
-                path: "\(root)/swift-syntax")
+                path: "\(root)/swift-syntax"),
+            .package(
+                url: "https://github.com/apple/swift-docc-plugin",
+                from: "1.0.0")
         ]
 } else {
     // These dependencies should match `update-checkout`
@@ -75,7 +78,10 @@ if let useLocalDepsEnv = Context.environment["SWIFTCI_USE_LOCAL_DEPS"], !useLoca
                 branch: "main"),
             .package(
                 url: "https://github.com/swiftlang/swift-syntax",
-                branch: "main")
+                branch: "main"),
+            .package(
+                url: "https://github.com/apple/swift-docc-plugin",
+                from: "1.0.0")
         ]
 }
 
